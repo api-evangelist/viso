@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.viso.ai/status/viso-now
+status_page: https://status.viso.ai/status/viso-now
+status_page_platform: Uptime Kuma
+status_page_config:
+  slug: viso-now
+  title: Viso Now Status
+  description: Current availability and performance status for Viso Now services.
+  auto_refresh_interval: 300
+monitored_services:
+- Viso Now App
+- Viso Now AI Engine
+- Viso Now Documentation
+- Viso Now Vision Agents
+- Viso Now Connectors
+versioning:
+  scheme: unknown
+  notes: >-
+    Viso Now exposes an Apollo GraphQL API at now.viso.ai; GraphQL versioning is
+    schema-evolution based (no URI version segment observed). Introspection is
+    disabled in production, so no schema/version metadata could be captured.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+deprecated_operations: []

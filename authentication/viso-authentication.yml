@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  live probe of https://now.viso.ai (Viso Now app + GraphQL API) and its client
+  bundle; no OpenAPI/GraphQL introspection available (introspection disabled)
+summary:
+  types: [oauth2, session]
+  api_key_in: []
+  oauth2_flows: [authorizationCode]
+  notes: >-
+    Viso Now signs users in with Google Identity Services
+    (accounts.google.com/gsi/client is loaded by the app) and then carries a
+    session credential to its Apollo GraphQL API. Unauthenticated GraphQL
+    requests to the `me` query return HTTP 403 "You are not allowed to access
+    this resource" and CORS is credentialed (Access-Control-Allow-Credentials:
+    true), consistent with cookie/session-bearer auth behind the Google sign-in.
+schemes:
+- name: GoogleSignIn
+  type: oauth2
+  provider: Google Identity Services
+  flow: authorizationCode
+  evidence: 'now.viso.ai loads https://accounts.google.com/gsi/client'
+  sources: [live-probe]
+- name: SessionCredential
+  type: session
+  applies_to: https://now.viso.ai/api/svc-viso-now/graphql
+  evidence: >-
+    anonymous GraphQL `me` query returns 403; credentialed CORS
+    (Access-Control-Allow-Credentials: true)
+  sources: [live-probe]

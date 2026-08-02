@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  live probe of the Viso Now GraphQL API (now.viso.ai/api/svc-viso-now/graphql,
+  Apollo Server) and the Google Identity Services sign-in flow
+standards:
+- id: graphql
+  conforms: true
+  evidence: >-
+    Apollo Server GraphQL endpoint at now.viso.ai/api/svc-viso-now/graphql;
+    responds to POST {query:"{__typename}"} with {"data":{"__typename":"Query"}}
+- id: oauth2
+  conforms: true
+  evidence: sign-in via Google Identity Services (OAuth 2.0 / OIDC provider)
+- id: oidc
+  conforms: true
+  evidence: Google Identity Services (accounts.google.com/gsi) is an OpenID Connect provider
+- id: rest
+  conforms: false
+  evidence: primary API surface is GraphQL, not REST
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: GraphQL errors use the GraphQL errors[] envelope, not application/problem+json
+- id: asyncapi-events
+  conforms: false
+  evidence: no public event/webhook/AsyncAPI surface discovered

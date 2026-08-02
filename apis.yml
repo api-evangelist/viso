@@ -1,7 +1,18 @@
 aid: viso
 name: VISO
-description: 'VISO is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  viso.ai builds Visual General Intelligence, a new kind of computer vision that
+  understands any scene out of the box without data collection, annotation, or
+  per-question retraining. The company ships two products: Viso Suite, an
+  industry- and hardware-agnostic no-code/low-code cloud platform to build,
+  deploy, scale, and operate real-world computer vision applications; and Viso
+  Now, an agentic computer vision platform whose vision agents connect a camera
+  feed, recognize the scene, write the detection logic, and wire the alerts on
+  auto-pilot. Viso Now plugs into the cameras and video systems teams already
+  run through ready-made connectors, then pushes outputs anywhere: alerts to
+  Slack, Teams, or email, and media forwarded into any ERP, BI tool, or
+  third-party system over a direct API. The Viso Now backend is exposed as an
+  authenticated Apollo GraphQL API at now.viso.ai with Google sign-in.
 url: https://raw.githubusercontent.com/api-evangelist/viso/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,13 +20,52 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://viso.ai/wp-content/uploads/2021/03/viso-ai-logo.png
 tags:
 - Company
 - Ai
-apis: []
+- Computer Vision
+- Machine Learning
+- Video Analytics
+- Vision Agents
+- Edge AI
+- GraphQL
+- No-Code
+apis:
+- name: Viso Now GraphQL API
+  description: >-
+    Authenticated Apollo GraphQL API backing the Viso Now agentic computer
+    vision app. Anonymous access is denied (HTTP 403); sign-in is via Google
+    Identity Services with a session credential. GraphQL introspection is
+    disabled in production, so no machine-readable schema is published.
+  humanURL: https://docs.now.viso.ai/
+  baseURL: https://now.viso.ai/api/svc-viso-now/graphql
+  tags:
+  - GraphQL
+  - Computer Vision
+  - Vision Agents
+  properties:
+  - type: GraphQL
+    url: https://now.viso.ai/api/svc-viso-now/graphql
+  - type: Documentation
+    url: https://docs.now.viso.ai/
+  - type: Authentication
+    url: authentication/viso-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +74,34 @@ maintainers:
 common:
 - type: Website
   url: https://viso.ai/
+- type: DeveloperPortal
+  url: https://docs.now.viso.ai/
+- type: Documentation
+  url: https://docs.now.viso.ai/
+- type: Pricing
+  url: https://viso.ai/viso-now/pricing/
+- type: SignUp
+  url: https://now.viso.ai/
+- type: TermsOfService
+  url: https://viso.ai/legal/terms-of-service/
+- type: PrivacyPolicy
+  url: https://viso.ai/legal/privacy-policy/
+- type: StatusPage
+  url: https://status.viso.ai/status/viso-now
+- type: Authentication
+  url: authentication/viso-authentication.yml
+- type: Lifecycle
+  url: lifecycle/viso-lifecycle.yml
+- type: Conformance
+  url: conformance/viso-conformance.yml
+- type: WellKnown
+  url: well-known/viso-well-known.yml
+- type: LLMsTxt
+  url: llms/viso-llms.txt
+- type: DomainSecurity
+  url: security/viso-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1

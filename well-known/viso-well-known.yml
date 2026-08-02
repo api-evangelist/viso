@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/* on viso.ai hosts
+notes: >-
+  viso.ai serves a SiteGround bot-challenge (HTTP 202 "sg-captcha: challenge"
+  meta-refresh) for every path including /.well-known/*, so no machine-readable
+  well-known document could be confirmed there. now.viso.ai (the Viso Now app)
+  is a client-rendered SPA that returns the app HTML shell (200 text/html) for
+  every unknown path, so /.well-known/* there are SPA fallbacks, not real
+  documents. No genuine security.txt, openid-configuration, oauth-authorization-server,
+  api-catalog, or ai-plugin.json was found. Absence recorded as honest data.
+hosts:
+- host: https://viso.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    note: sg-captcha challenge (text/html), not a real security.txt
+  - path: /.well-known/openid-configuration
+    status: 202
+    note: sg-captcha challenge, not present
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    note: sg-captcha challenge, not present
+  - path: /.well-known/api-catalog
+    status: 202
+    note: sg-captcha challenge, not present
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    note: sg-captcha challenge, not present
+- host: https://now.viso.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA HTML shell (text/html), not a real security.txt
+  - path: /llms.txt
+    status: 200
+    note: SPA HTML shell (text/html), not a real llms.txt
