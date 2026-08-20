@@ -38,6 +38,16 @@ modified: '2026-07-21'
 image: https://viso.ai/wp-content/uploads/2021/03/viso-ai-logo.png
 tags:
 - Company
+- Artificial Intelligence
+- Computer-Vision
+- Machine-Learning
+- Video Analytics
+- Vision Agents
+- Edge AI
+- GraphQL
+- No-Code
+tags_raw:
+- Company
 - Ai
 - Computer Vision
 - Machine Learning
@@ -56,6 +66,10 @@ apis:
   humanURL: https://docs.now.viso.ai/
   baseURL: https://now.viso.ai/api/svc-viso-now/graphql
   tags:
+  - GraphQL
+  - Computer-Vision
+  - Vision Agents
+  tags_raw:
   - GraphQL
   - Computer Vision
   - Vision Agents
