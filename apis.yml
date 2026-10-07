@@ -100,6 +100,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/viso-plans-pricing.yml
 - type: Website
   url: https://viso.ai/
 - type: DeveloperPortal
